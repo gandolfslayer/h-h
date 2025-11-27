@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&H Enterprise | Modern Design & Construction</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#7dd3fc', // Baby Blue / Sky 300
+                            dark: '#0f172a', // Slate 900
+                            grey: '#334155', // Slate 700
+                            light: '#f1f5f9', // Slate 100
+                            accent: '#e0f2fe', // Sky 100
+                        }
+                    },
+                    backgroundImage: {
+                        'stripe-pattern': "repeating-linear-gradient(45deg, #0f172a, #0f172a 10px, #1e293b 10px, #1e293b 20px)",
+                        'blue-stripe': "repeating-linear-gradient(45deg, #7dd3fc, #7dd3fc 10px, #38bdf8 10px, #38bdf8 20px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom "HiVis" Reflective Effect Animation */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .reflective-text {
+            background: linear-gradient(90deg, #7dd3fc 0%, #ffffff 50%, #7dd3fc 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 6s linear infinite;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        }
+        
+        .nav-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="h-10 w-10 bg-brand-blue flex items-center justify-center rounded transform -skew-x-12">
+                        <span class="font-extrabold text-brand-dark text-xl transform skew-x-12">H&H</span>
+                    </div>
+                    <span class="text-white font-bold text-xl tracking-tight">ENTERPRISE</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-brand-blue font-bold transition-colors">Home</a>
+                    <a href="services.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">Services</a>
+                    <a href="projects.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">Projects</a>
+                    <a href="about.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">About</a>
+                    <a href="#contact" class="bg-brand-blue text-brand-dark px-6 py-2 rounded font-bold hover:bg-white transition-all transform hover:-translate-y-0.5">
+                        Get a Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-blue focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
+            <div class="px-4 pt-2 pb-8 space-y-1">
+                <a href="index.html" class="block px-3 py-4 text-base font-bold text-brand-blue bg-slate-800 rounded-md">Home</a>
+                <a href="services.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">Services</a>
+                <a href="projects.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">Projects</a>
+                <a href="about.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">About</a>
+                <a href="#contact" class="block px-3 py-4 text-base font-bold text-brand-dark bg-brand-blue rounded-md text-center mt-4">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 bg-stripe-pattern">
+        <!-- Overlay -->
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-brand-blue/30 rounded-full px-4 py-1 mb-8 animate-fade-in-up">
+                <span class="flex h-2 w-2 rounded-full bg-brand-blue"></span>
+                <span class="text-brand-blue text-sm font-semibold tracking-wider uppercase">Honest • Humble • High-Tech</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                Modern Design,<br>
+                <span class="reflective-text">Transparent Building</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 mb-10">
+                Based in Fayette, PA. H&H Enterprise uses modern technology to bring your vision to life. We prioritize fair pricing and personability over profit.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-brand-blue text-brand-dark font-bold text-lg rounded shadow-[0_0_20px_rgba(125,211,252,0.3)] hover:bg-white hover:scale-105 transition-all duration-300">
+                    Start Your Project
+                </a>
+                <a href="projects.html" class="px-8 py-4 border-2 border-slate-600 text-white font-bold text-lg rounded hover:border-brand-blue hover:text-brand-blue transition-all duration-300 bg-slate-900/50">
+                    View Our Work
+                </a>
+            </div>
+        </div>
+
+        <!-- Decorative Bottom Bar (HiVis Style) -->
+        <div class="absolute bottom-0 w-full h-3 bg-brand-blue"></div>
+    </section>
+
+    <!-- Features / Qualities Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Quality 1 -->
+                <div class="group p-8 border border-slate-100 rounded-xl hover:shadow-xl hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="handshake" class="w-8 h-8 text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Honest & Humble</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We are a small local company that genuinely cares. We want to make a living, not rob you blind. Transparency is our promise.
+                    </p>
+                </div>
+
+                <!-- Quality 2 -->
+                <div class="group p-8 border border-slate-100 rounded-xl hover:shadow-xl hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="monitor-smartphone" class="w-8 h-8 text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Modern Technology</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We utilize the newest tech for layouts and design. This ensures your modern interior designs are executed with absolute precision.
+                    </p>
+                </div>
+
+                <!-- Quality 3 -->
+                <div class="group p-8 border border-slate-100 rounded-xl hover:shadow-xl hover:border-brand-blue/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-8 h-8 text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Personal Connection</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We build long-lasting clients through personability. Your satisfaction is our top priority, and we treat every home like our own.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-900 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">H&H Enterprise</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white">Modern Solutions</h3>
+                <div class="w-24 h-1 bg-brand-blue mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="bg-slate-800 p-6 rounded hover:bg-slate-700 transition-colors border-l-4 border-transparent hover:border-brand-blue">
+                    <i data-lucide="sofa" class="w-10 h-10 text-brand-blue mb-4"></i>
+                    <h4 class="text-xl font-bold text-white mb-2">Modern Interiors</h4>
+                    <p class="text-slate-400 text-sm">Expanding community outlooks with fresh, contemporary interior designs.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-slate-800 p-6 rounded hover:bg-slate-700 transition-colors border-l-4 border-transparent hover:border-brand-blue">
+                    <i data-lucide="building-2" class="w-10 h-10 text-brand-blue mb-4"></i>
+                    <h4 class="text-xl font-bold text-white mb-2">Commercial</h4>
+                    <p class="text-slate-400 text-sm">Efficient workspaces built with modern tech and smart layouts.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-slate-800 p-6 rounded hover:bg-slate-700 transition-colors border-l-4 border-transparent hover:border-brand-blue">
+                    <i data-lucide="hammer" class="w-10 h-10 text-brand-blue mb-4"></i>
+                    <h4 class="text-xl font-bold text-white mb-2">Renovations</h4>
+                    <p class="text-slate-400 text-sm">Updating Fayette's homes with new tech and quality materials.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-slate-800 p-6 rounded hover:bg-slate-700 transition-colors border-l-4 border-transparent hover:border-brand-blue">
+                    <i data-lucide="pen-tool" class="w-10 h-10 text-brand-blue mb-4"></i>
+                    <h4 class="text-xl font-bold text-white mb-2">Graphic Design</h4>
+                    <p class="text-slate-400 text-sm">Visualizing your project before we build with expert design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                
+                <!-- Info Sidebar -->
+                <div class="bg-blue-stripe w-full md:w-1/3 p-8 flex flex-col justify-between text-slate-900">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-slate-900">Get in Touch</h3>
+                        <p class="mb-8 font-medium">Ready to update your space? Contact Baron and the team today.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="map-pin" class="w-6 h-6 mt-1"></i>
+                                <span>Fayette, PA<br>Serving the local community</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                                <span>(555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                                <span>info@handhenterprise.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0">
+                         <div class="font-bold text-4xl opacity-20 tracking-tighter">H&H</div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="w-full md:w-2/3 p-8 md:p-12 bg-white">
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Request a Fair Quote</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-2">First Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-2">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Service Type</label>
+                            <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors">
+                                <option>Modern Interior Design</option>
+                                <option>General Construction</option>
+                                <option>Renovation</option>
+                                <option>Graphic Design Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-sm font-semibold text-slate-600 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-slate-900 text-brand-blue font-bold py-4 rounded hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="h-8 w-8 bg-brand-blue flex items-center justify-center rounded transform -skew-x-12">
+                            <span class="font-extrabold text-brand-dark text-sm transform skew-x-12">H&H</span>
+                        </div>
+                        <span class="text-white font-bold text-lg">ENTERPRISE</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        Formerly H&H Construction. Proudly serving Fayette, PA since 2015. Modern tech, honest work, and community focused.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-brand-blue font-bold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-brand-blue transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Safety Protocols</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2024 H&H Enterprise. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Form Handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="animate-pulse">Sending...</span>';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<span>Message Sent!</span> <i data-lucide="check" class="w-4 h-4"></i>';
+                btn.classList.remove('bg-slate-900', 'text-brand-blue');
+                btn.classList.add('bg-green-600', 'text-white');
+                lucide.createIcons();
+                e.target.reset();
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.add('bg-slate-900', 'text-brand-blue');
+                    btn.classList.remove('bg-green-600', 'text-white');
+                    btn.disabled = false;
+                    lucide.createIcons();
+                }, 3000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
