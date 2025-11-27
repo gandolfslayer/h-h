@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | H&H Enterprise</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#7dd3fc', // Baby Blue / Sky 300
+                            dark: '#0f172a', // Slate 900
+                            grey: '#334155', // Slate 700
+                            light: '#f1f5f9', // Slate 100
+                            accent: '#e0f2fe', // Sky 100
+                        }
+                    },
+                    backgroundImage: {
+                        'stripe-pattern': "repeating-linear-gradient(45deg, #0f172a, #0f172a 10px, #1e293b 10px, #1e293b 20px)",
+                        'blue-stripe': "repeating-linear-gradient(45deg, #7dd3fc, #7dd3fc 10px, #38bdf8 10px, #38bdf8 20px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .nav-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+        
+        .team-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="h-10 w-10 bg-brand-blue flex items-center justify-center rounded transform -skew-x-12">
+                        <span class="font-extrabold text-brand-dark text-xl transform skew-x-12">H&H</span>
+                    </div>
+                    <span class="text-white font-bold text-xl tracking-tight">ENTERPRISE</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">Home</a>
+                    <a href="services.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">Services</a>
+                    <a href="projects.html" class="text-slate-300 hover:text-brand-blue transition-colors font-medium">Projects</a>
+                    <a href="about.html" class="text-brand-blue font-bold transition-colors">About</a>
+                    <a href="index.html#contact" class="bg-brand-blue text-brand-dark px-6 py-2 rounded font-bold hover:bg-white transition-all transform hover:-translate-y-0.5">
+                        Get a Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-blue focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
+            <div class="px-4 pt-2 pb-8 space-y-1">
+                <a href="index.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">Home</a>
+                <a href="services.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">Services</a>
+                <a href="projects.html" class="block px-3 py-4 text-base font-medium text-slate-300 hover:text-brand-blue hover:bg-slate-800 rounded-md">Projects</a>
+                <a href="about.html" class="block px-3 py-4 text-base font-bold text-brand-blue bg-slate-800 rounded-md">About</a>
+                <a href="index.html#contact" class="block px-3 py-4 text-base font-bold text-brand-dark bg-brand-blue rounded-md text-center mt-4">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 bg-stripe-pattern opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Small Company, Big Heart</h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                Humble, honest, and dedicated to Fayette, PA. We build relationships, not just structures.
+            </p>
+        </div>
+        <div class="absolute bottom-0 w-full h-1 bg-brand-blue"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Our Story Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="w-full md:w-1/2">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-brand-accent text-brand-dark text-xs font-bold rounded uppercase tracking-wider">Our History</span>
+                            <div class="h-px bg-slate-200 flex-grow"></div>
+                        </div>
+                        <h2 class="text-4xl font-extrabold text-slate-900 mb-6">From Construction to Enterprise</h2>
+                        <p class="text-slate-600 mb-4 leading-relaxed text-lg">
+                            Started in 2015 as H&H Construction, we quickly made a name for ourselves in Fayette, Pennsylvania, by simply doing what we said we would do.
+                        </p>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            In 2023, we rebranded to <strong>H&H Enterprise</strong> to reflect our expanding community outlook on modern interior design and technology. While our name changed, our core belief remains: we are a humble, honest company. We want to make a fair living, not rob people blind. We genuinely care about our customers, prioritizing your satisfaction above all else.
+                        </p>
+                        
+                        <!-- Mini Stats -->
+                        <div class="flex space-x-8 mt-8 border-t border-slate-100 pt-6">
+                            <div>
+                                <span class="block text-3xl font-bold text-brand-blue">2015</span>
+                                <span class="text-sm text-slate-500">Established</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-bold text-brand-blue">2023</span>
+                                <span class="text-sm text-slate-500">Rebranded</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-bold text-brand-blue">100%</span>
+                                <span class="text-sm text-slate-500">Local</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 relative">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue opacity-10 rounded-full blur-3xl"></div>
+                        <!-- Abstract "Blueprint" Image Placeholder -->
+                        <div class="relative z-10 bg-slate-800 rounded-xl overflow-hidden shadow-2xl border-b-8 border-brand-blue p-8 aspect-[4/3] flex items-center justify-center">
+                            <div class="text-center">
+                                <i data-lucide="map-pin" class="w-24 h-24 text-slate-600 mx-auto mb-4"></i>
+                                <h3 class="text-white font-bold text-xl">Fayette, PA</h3>
+                                <p class="text-slate-400 text-sm mt-2">Home Base</p>
+                            </div>
+                            <!-- Decorative Lines -->
+                            <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-slate-600"></div>
+                            <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-slate-600"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values (Dark Section) -->
+        <section class="py-24 bg-slate-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-stripe-pattern opacity-20"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">Our Promise</h2>
+                    <h3 class="text-4xl font-extrabold text-white">Why Choose H&H?</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-blue transition-colors">
+                        <div class="w-14 h-14 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="heart-handshake" class="w-8 h-8 text-brand-blue"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Humble & Honest</h4>
+                        <p class="text-slate-400">
+                            We are transparent with our pricing. We believe in fair pay for fair work. We build long-lasting clients through personability.
+                        </p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-blue transition-colors">
+                        <div class="w-14 h-14 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="monitor-check" class="w-8 h-8 text-brand-blue"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Modern Tech</h4>
+                        <p class="text-slate-400">
+                            We use newer technology to complete projects. This means better precision, faster turnarounds, and modern results for your home.
+                        </p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-brand-blue transition-colors">
+                        <div class="w-14 h-14 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="w-8 h-8 text-brand-blue"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Community First</h4>
+                        <p class="text-slate-400">
+                            Our goal is to expand the community outlook on modern design. We are locals helping locals upgrade their lifestyles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900">Meet The Team</h2>
+                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">The people behind the transparency and hard work.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Baron -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-300 relative overflow-hidden flex items-end justify-center">
+                            <i data-lucide="user" class="w-32 h-32 text-slate-400 mb-0 transform translate-y-4 group-hover:scale-105 transition-transform"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="p-6 relative">
+                            <div class="absolute -top-10 right-6 bg-brand-blue p-2 rounded-lg shadow-lg">
+                                <i data-lucide="briefcase" class="w-6 h-6 text-brand-dark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Baron Hatalowich</h3>
+                            <p class="text-brand-blue font-bold text-sm uppercase tracking-wide mb-4">CEO</p>
+                            <p class="text-slate-600 text-sm">
+                                The driving force behind H&H. Dedicated to honest business and quality results.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Ryan -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-300 relative overflow-hidden flex items-end justify-center">
+                            <i data-lucide="user" class="w-32 h-32 text-slate-400 mb-0 transform translate-y-4 group-hover:scale-105 transition-transform"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="p-6 relative">
+                            <div class="absolute -top-10 right-6 bg-brand-blue p-2 rounded-lg shadow-lg">
+                                <i data-lucide="cpu" class="w-6 h-6 text-brand-dark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Ryan Scott</h3>
+                            <p class="text-brand-blue font-bold text-sm uppercase tracking-wide mb-4">Main Tech</p>
+                            <p class="text-slate-600 text-sm">
+                                Specialist in modern technology and precision execution on the job site.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Paul -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-300 relative overflow-hidden flex items-end justify-center">
+                            <i data-lucide="user" class="w-32 h-32 text-slate-400 mb-0 transform translate-y-4 group-hover:scale-105 transition-transform"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="p-6 relative">
+                            <div class="absolute -top-10 right-6 bg-brand-blue p-2 rounded-lg shadow-lg">
+                                <i data-lucide="hammer" class="w-6 h-6 text-brand-dark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Paul M.</h3>
+                            <p class="text-brand-blue font-bold text-sm uppercase tracking-wide mb-4">Lead Laborer</p>
+                            <p class="text-slate-600 text-sm">
+                                The backbone of our physical operations, ensuring every detail is built to last.
+                            </p>
+                        </div>
+                    </div>
+
+                     <!-- Andrew -->
+                     <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-slate-300 relative overflow-hidden flex items-end justify-center">
+                            <i data-lucide="user" class="w-32 h-32 text-slate-400 mb-0 transform translate-y-4 group-hover:scale-105 transition-transform"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="p-6 relative">
+                            <div class="absolute -top-10 right-6 bg-brand-blue p-2 rounded-lg shadow-lg">
+                                <i data-lucide="pen-tool" class="w-6 h-6 text-brand-dark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Andrew Hawk</h3>
+                            <p class="text-brand-blue font-bold text-sm uppercase tracking-wide mb-4">Co-Founder & Graphic Designer</p>
+                            <p class="text-slate-600 text-sm">
+                                Bringing creative vision to our modern interior designs and branding.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Strip -->
+        <section class="py-16 bg-blue-stripe">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-6 bg-white inline-block px-4 py-2 rounded shadow-lg transform -rotate-1">
+                    Transparent. Local. Modern.
+                </h2>
+                <p class="text-slate-900 font-bold text-lg mb-8 bg-white/80 inline-block px-4 py-1 rounded">
+                    Join the H&H family of satisfied clients in Fayette, PA.
+                </p>
+                <br>
+                <a href="index.html#contact" class="inline-block bg-slate-900 text-white px-10 py-4 rounded font-bold hover:scale-105 transition-transform shadow-2xl border-2 border-white">
+                    Contact Baron & The Team
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4 group">
+                        <div class="h-8 w-8 bg-brand-blue flex items-center justify-center rounded transform -skew-x-12 group-hover:skew-x-0 transition-transform">
+                            <span class="font-extrabold text-brand-dark text-sm transform skew-x-12 group-hover:skew-x-0 transition-transform">H&H</span>
+                        </div>
+                        <span class="text-white font-bold text-lg">ENTERPRISE</span>
+                    </a>
+                    <p class="text-slate-500 max-w-sm">
+                        Building long lasting clients through transparency and personability in Fayette, PA.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-brand-blue transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="text-brand-blue font-bold">Projects</a></li>
+                        <li><a href="about.html" class="hover:text-brand-blue transition-colors">About Us</a></li>
+                        <li><a href="index.html#contact" class="hover:text-brand-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Safety Protocols</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2024 H&H Enterprise. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
